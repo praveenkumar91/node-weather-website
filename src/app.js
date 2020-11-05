@@ -58,14 +58,13 @@ app.get('/weather',(req,res)=>{
 				error:error
 			})
 		}
-		forecast(latitude,longitude,'m',(error,forecastData={})=>{
+		forecast(latitude,longitude,'m',(error,data={})=>{
 			if(error){
 				return console.log(error);
 			}
 			
 			res.send({
-				forecastData:forecastData,
-				location:location
+				data
 			});
 		});
 	});

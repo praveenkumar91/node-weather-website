@@ -10,12 +10,7 @@ const forecast=(latitude,longitude,units,callback)=>{
 		} else if(body.message){
 			callback(body.message);
 		} else{
-			const {weather_descriptions, temperature:temp, feelslike} = body.current;
-			callback(undefined,{
-				desc:weather_descriptions[0],
-				temp,
-				feelslike
-			});
+			callback(undefined,{ current:body.current });
 		}
 	});
 };

@@ -16,9 +16,12 @@ form.addEventListener('submit',(e)=>{
 				msg2.innerText = data.error;
 				msg1.innerText=null;
 			}else{
-				const str="Forcast for "+data.location+" is "+data.forecastData.desc+" with temprate as "+data.forecastData.temp+"°C but its feels like "+data.forecastData.feelslike+"°C";
+				const current=data.data.current;
+				const str="Today: "+current.weather_descriptions[0]+". The temprature is "+current.temperature+"°C but its feels like "+current.feelslike+"°C";
 				msg1.innerText=str;
 				msg2.innerText=null;
+				
+				
 			}
 			
 		});
