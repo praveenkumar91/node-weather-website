@@ -10,7 +10,7 @@ form.addEventListener('submit',(e)=>{
 	const location = search.value;
 	msg1.innerText="loading......";
 	msg2.innerText=null;
-	fetch('http://otd2049.xeop.de:3000/weather?address='+location+'').then((response)=>{
+	fetch('/weather?address='+location+'').then((response)=>{
 		response.json().then((data)=>{
 			if(data.error){
 				msg2.innerText = data.error;
