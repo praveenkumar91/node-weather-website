@@ -4,6 +4,7 @@ const form = document.querySelector('form');
 const search = document.querySelector('input');
 const msg1 = document.querySelector('#p1');
 const msg2 = document.querySelector('#p2');
+const city = document.querySelector('#city');
 
 form.addEventListener('submit',(e)=>{
 	e.preventDefault();
@@ -19,6 +20,7 @@ form.addEventListener('submit',(e)=>{
 				const current=data.data.current;
 				const str="Today: "+current.weather_descriptions[0]+". The temprature is "+current.temperature+"°C but its feels like "+current.feelslike+"°C";
 				msg1.innerText=str;
+				city.innerText=data.location;
 				msg2.innerText=null;
 				
 				
